@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Rollcall tokens. One accent (cobalt), neutral zinc base, semantic status colors. */
+:root {
+  --bg: #f4f4f5;
+  --surface: #ffffff;
+  --surface-2: #fafafa;
+  --border: #e4e4e7;
+  --border-strong: #d4d4d8;
+  --ink: #18181b;
+  --ink-2: #52525b;
+  --muted: #71717a;
+  --accent: #2f5fe0;
+  --accent-ink: #ffffff;
+  --accent-soft: #e8eefc;
+  --good: #1f8f5c;
+  --good-soft: #e3f5ec;
+  --warn: #b26a0b;
+  --warn-soft: #fdf1dc;
+  --bad: #c9303f;
+  --bad-soft: #fde7ea;
+  --neutral: #71717a;
+  --neutral-soft: #ededf0;
+  --shadow: 0 1px 2px rgb(24 24 27 / 0.05);
+}
+
+.dark {
+  --bg: #0b0b0d;
+  --surface: #141416;
+  --surface-2: #1a1a1d;
+  --border: #26262a;
+  --border-strong: #34343a;
+  --ink: #f4f4f5;
+  --ink-2: #c4c4cc;
+  --muted: #8c8c96;
+  --accent: #7b97ff;
+  --accent-ink: #0b0b0d;
+  --accent-soft: #1b2342;
+  --good: #4fd08a;
+  --good-soft: #10261b;
+  --warn: #f0b24a;
+  --warn-soft: #2d2210;
+  --bad: #ff6b7a;
+  --bad-soft: #321418;
+  --neutral: #8c8c96;
+  --neutral-soft: #1f1f23;
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.5);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-accent-soft: var(--accent-soft);
+  --color-good: var(--good);
+  --color-good-soft: var(--good-soft);
+  --color-warn: var(--warn);
+  --color-warn-soft: var(--warn-soft);
+  --color-bad: var(--bad);
+  --color-bad-soft: var(--bad-soft);
+  --color-neutral: var(--neutral);
+  --color-neutral-soft: var(--neutral-soft);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --radius-panel: 10px;
+}
+
+html {
+  color-scheme: light dark;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-feature-settings: "cv11", "ss01";
+}
+
+.num {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-strong) transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

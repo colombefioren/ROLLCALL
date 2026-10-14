@@ -1,0 +1,1 @@
+"""Rollcall vision service."""
